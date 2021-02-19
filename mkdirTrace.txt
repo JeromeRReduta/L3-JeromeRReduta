@@ -1,0 +1,58 @@
+  GNU nano 5.5                                                                                                   mkdirTrace.txt
+execve("/usr/bin/mkdir", ["mkdir"], 0x7ffd6ffa6fb0 /* 20 vars */) = 0
+brk(NULL)                               = 0x55e449fe9000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffc05c8abc0) = -1 EINVAL (Invalid argument)
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=33501, ...}) = 0
+mmap(NULL, 33501, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fc916e4e000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220\202\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\207\360\21\247\344\314?\306\nT\320\323\335i\16t"..., 68, 880) = 68
+fstat(3, {st_mode=S_IFREG|0755, st_size=2159552, ...}) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fc916e4c000
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 1868448, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fc916c83000
+mmap(0x7fc916ca9000, 1363968, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x26000) = 0x7fc916ca9000
+mmap(0x7fc916df6000, 311296, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x173000) = 0x7fc916df6000
+mmap(0x7fc916e42000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1be000) = 0x7fc916e42000
+mmap(0x7fc916e48000, 12960, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fc916e48000
+close(3)                                = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fc916c81000
+arch_prctl(ARCH_SET_FS, 0x7fc916e4d5c0) = 0
+mprotect(0x7fc916e42000, 12288, PROT_READ) = 0
+mprotect(0x55e448bd5000, 4096, PROT_READ) = 0
+mprotect(0x7fc916e83000, 4096, PROT_READ) = 0
+munmap(0x7fc916e4e000, 33501)           = 0
+brk(NULL)                               = 0x55e449fe9000
+brk(0x55e44a00a000)                     = 0x55e44a00a000
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=3362224, ...}) = 0
+mmap(NULL, 3362224, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fc91694c000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=2998, ...}) = 0
+read(3, "# Locale name alias data base.\n#"..., 4096) = 2998
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/locale/en_US.UTF-8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en_US.utf8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en_US/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en.UTF-8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en.utf8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+write(2, "mkdir: ", 7mkdir: )                  = 7
+write(2, "missing operand", 15missing operand)         = 15
+write(2, "\n", 1
+)                       = 1
+write(2, "Try 'mkdir --help' for more info"..., 41Try 'mkdir --help' for more information.
+) = 41
+close(1)                                = 0
+close(2)                                = 0
+exit_group(1)                           = ?
++++ exited with 1 +++
+
+
