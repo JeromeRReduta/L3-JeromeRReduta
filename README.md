@@ -33,7 +33,31 @@ For the first part of this lab, you will trace several programs and record the r
 
 (list the syscalls here, use '*' to create a bulleted list in Markdown format)
 
+* read
+* write
+* close
+* stat
+* fstat
+* mmap
+* mprotect
+* munmap
+* brk
+* rt_sigaction
+* rt_sigprocmask
+* ioctl
+* access
+* execve
+* getdents
+* statfs
+* arch_prctl
+* set_tid_address
+* openat
+* set_robust_list
+* prlimit64
+
 2. How many unique system calls are in your list?
+
+There are 21 system calls in the list.
 
 3. Next, get the examples for `fork` and `readdir` from the schedule page. Go through the code an understand the logic. Then compile them and list their system calls below. Were there any unexpected or interesting results, or any differences in the output?
 
