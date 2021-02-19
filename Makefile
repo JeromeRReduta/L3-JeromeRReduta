@@ -12,5 +12,16 @@ fork:
 readdir:
 	gcc -Wall readdir.c -o readdir
 
+testOpenLog:
+	LD_PRELOAD=$$(pwd)/open-log.so nano roll.txt
+
+testRickRopen:
+	LD_PRELOAD=$$(pwd)/rick-ropen.so nano roll.txt
+
+testTxt:
+	LD_PRELOAD=$$(pwd)/rick-ropen.so nano fishTrace.txt
+testJava:
+	LD_PRELOAD=$$(pwd)/rick-ropen.so nano blank.java
+
 clean:
 	rm -f *.so

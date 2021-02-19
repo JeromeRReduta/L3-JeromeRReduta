@@ -33,8 +33,29 @@ void initialize(void)
 int open(const char *pathname, int flags)
 {
     size_t len = strlen(pathname);
+    printf("%s", pathname);
+    printf("LENGTH:\t%lu", len);
 
     /* Whoo, we have the string length. Now what?! */
 
+    // Maybe strstr messes with pathname pointer, and instead we should go through entire char[] one by one
+
+    char myPath[] = "~/L3-JeromeRReduta/roll.txt";
+
+    char* txt = strstr(pathname, "txt");
+    char* java = strstr(pathname, "java");
+
+    if (txt != NULL) {
+        printf("get rolled");
+        return -1;
+    }
+    else if (java != NULL) {
+        printf("FOUND A JAVA");
+        return -1;
+    }
+
     return (*orig_open)(pathname, flags);
 }
+
+
+// $ LD_PRELOAD=$(pwd)/rick-ropen.so nano 
