@@ -262,7 +262,7 @@ According to the man pages, write() has the following signature:
  write() prints out the text in buf to a given file descriptor, up to count bytes. Write() returns the number of bytes written, or -1 for an error. If there's no error, write() usually returns the same number as count (i.e. it wrote everything it intended to write), but it may be less if write() is interrupted for some reason.
 
  In this case, the count arg and the return value are both 5, meaning this write() call wrote the full message. When I ran this command, all the messages I saw seemed complete, too.
- 
+
 
 
 5. For your next mission, you are going to try to predict the purpose of a program simply by inspecting its system calls. Go into the `/bin` directory and look for a program/utility you've never used before. Trace it with `strace` and try to understand what the program is doing without reading its documentation.
@@ -382,6 +382,7 @@ LD_PRELOAD=/full/path/to/the/shared/object.so
 
 ...but it probably isn't a good idea unless you **really** want your system calls intercepted all the time.
 
+Done
 
 ### Rick Ropen()
 
