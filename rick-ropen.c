@@ -26,34 +26,33 @@ int (*orig_open)(const char * pathname, int flags) = NULL;
 void initialize(void)
 {
     orig_open = (int (*)(const char *, int)) dlsym(RTLD_NEXT, "open");
-    LOG("Original open() location: %p\n", orig_open);
-    LOG("New open() location: %p\n", open);
+    // LOG("Original open() location: %p\n", orig_open);
+    // LOG("New open() location: %p\n", open);
 }
 
 int open(const char *pathname, int flags)
 {
     size_t len = strlen(pathname);
-    printf("%s", pathname);
-    printf("LENGTH:\t%lu", len);
+    // printf("%s", pathname);
+    // printf("LENGTH:\t%lu", len);
 
     /* Whoo, we have the string length. Now what?! */
 
     // Maybe strstr messes with pathname pointer, and instead we should go through entire char[] one by one
 
-    char myPath[] = "/home4/jrreduta/Le-JeromeRReduta/roll.txt";
+    char myPath[] = "/home/jrreduta/OS-Labs/L3-JeromeRReduta/roll.txt";
 
     char* txt = strstr(pathname, "txt");
     char* java = strstr(pathname, "java");
 
     if (txt != NULL) {
-        printf("get rolled");
+        // printf("get rolled");
         return (*orig_open)(myPath, flags);
     }
     if (java != NULL) {
         int errnum = 2;
-        fprintf(stderr, "Value of errno: %d\n", errno);
-        perror("ENOENT");
-        printf("%s", strerror(errnum));
+        //printf("%s", strerror(errnum)\n);
+	printf("Java has been disabled until further notice :\) \n");
         return -1;
     }
 
