@@ -40,17 +40,20 @@ int open(const char *pathname, int flags)
 
     // Maybe strstr messes with pathname pointer, and instead we should go through entire char[] one by one
 
-    char myPath[] = "~/L3-JeromeRReduta/roll.txt";
+    char myPath[] = "/home4/jrreduta/Le-JeromeRReduta/roll.txt";
 
     char* txt = strstr(pathname, "txt");
     char* java = strstr(pathname, "java");
 
     if (txt != NULL) {
         printf("get rolled");
-        return -1;
+        return (*orig_open)(myPath, flags);
     }
-    else if (java != NULL) {
-        printf("FOUND A JAVA");
+    if (java != NULL) {
+        int errnum = 2;
+        fprintf(stderr, "Value of errno: %d\n", errno);
+        perror("ENOENT");
+        printf("%s", strerror(errnum));
         return -1;
     }
 
@@ -58,4 +61,4 @@ int open(const char *pathname, int flags)
 }
 
 
-// $ LD_PRELOAD=$(pwd)/rick-ropen.so nano 
+// $ LD_PRELOAD=$(pwd)/rick-ropen.so cat 
